@@ -33,7 +33,7 @@ public class InteriorRoom {
     }
 
     private float wallSurfaceArea() {
-        return (2 * mWidth * mHeight) + (2 * mLength * mHeight);
+        return (2 * mWidth * mHeight) + (2 * mLength * mHeight) + (mWidth * mLength);
     }
 
     public float totalSurfaceArea() {
