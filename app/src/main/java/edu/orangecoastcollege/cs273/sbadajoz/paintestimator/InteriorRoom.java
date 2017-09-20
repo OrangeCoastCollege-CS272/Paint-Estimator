@@ -12,24 +12,8 @@ public class InteriorRoom {
     private float mLength;
     private float mWidth;
 
-    public void setDoors(float doors) {
-        mDoors = doors;
-    }
-
-    public void setWindows(float windows) {
-        mWindows = windows;
-    }
-
-    public float getWidth() {
-        return mWidth;
-    }
-
-    public void setWidth(float width) {
-        mWidth = width;
-    }
-
     private float doorAndWindowArea() {
-        return mDoors * DOOR_AREA + mWindows * WINDOW_AREA;
+        return (mDoors * DOOR_AREA) + (mWindows * WINDOW_AREA);
     }
 
     private float wallSurfaceArea() {
@@ -37,7 +21,7 @@ public class InteriorRoom {
     }
 
     public float totalSurfaceArea() {
-        return wallSurfaceArea() * 4 - doorAndWindowArea();
+        return wallSurfaceArea()- doorAndWindowArea();
     }
 
     public float gallonsOfPaintRequires() {
@@ -46,10 +30,6 @@ public class InteriorRoom {
 
     public float getDoors() {
         return mDoors;
-    }
-
-    public void setDoors(int doors) {
-        mDoors = doors;
     }
 
     public float getHeight() {
@@ -72,7 +52,19 @@ public class InteriorRoom {
         return mWindows;
     }
 
-    public void setWindows(int windows) {
+    public void setDoors(float doors) {
+        mDoors = doors;
+    }
+
+    public void setWindows(float windows) {
         mWindows = windows;
+    }
+
+    public float getWidth() {
+        return mWidth;
+    }
+
+    public void setWidth(float width) {
+        mWidth = width;
     }
 }
