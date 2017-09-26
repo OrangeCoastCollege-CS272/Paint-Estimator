@@ -1,9 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/paintbackground"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
     tools:context="edu.orangecoastcollege.cs273.sbadajoz.paintestimator.HelpActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:id="@+id/amountTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/estimated_gallons"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:textSize="22sp" />
+
+    <Button
+        android:id="@+id/returnButton"
+        android:layout_width="wrap_content"
+        android:layout_height="42dp"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:onClick="goBack"
+        android:text="@string/return_btn"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="225dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:textSize="14sp"
+        android:text="@string/help_text" />
+</LinearLayout>

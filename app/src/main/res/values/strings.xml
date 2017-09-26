@@ -40,6 +40,7 @@
          \n\n
          A gallon of paint will cover approximately 275 square feet.
         </string>
+    <string name="estimated_gallons">Estimated Paint Required: 0.0 gallons</string>
 
 
 </resources>
