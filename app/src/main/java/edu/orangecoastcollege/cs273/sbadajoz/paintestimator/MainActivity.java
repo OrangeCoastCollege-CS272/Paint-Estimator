@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private InteriorRoom mInteriorRoom = new InteriorRoom();
 
     private SharedPreferences mPreferences;
+
     private void initializeViews() {
         mLengthText = (EditText) findViewById(R.id.lengthText);
         mWidthText = (EditText) findViewById(R.id.widthText);
@@ -59,7 +60,12 @@ public class MainActivity extends AppCompatActivity {
         editor.commit();
     }
 
-    protected void setComputeText(View view) {
+    /**
+     * Takes the user imputed data and uses the {@link InteriorRoom} class to compute the outputted data
+     * Pushes output to text view
+     * @param view view which calls method
+     */
+    public void setComputeText(View view) {
         saveSharedPreferences();
         mInteriorRoom.setLength(Float.parseFloat(mLengthText.getText().toString()));
         mInteriorRoom.setWidth(Float.parseFloat(mWidthText.getText().toString()));
@@ -74,12 +80,23 @@ public class MainActivity extends AppCompatActivity {
         mComputeText.setText(str.toString());
     }
 
+    /**
+     * Moves from this layout to the {@link HelpActivity} layout
+     * along with the amount of gallons of paint needed
+     * @param view
+     */
     protected void goToHelp(View view) {
         Intent intent = new Intent(this, HelpActivity.class);
         intent.putExtra("gallons", mInteriorRoom.gallonsOfPaintRequires());
         startActivity(intent);
     }
 
+    /**
+     * Called on layout creation
+     * Connects views to layout
+     * Loads previous data
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -89,3 +106,4 @@ public class MainActivity extends AppCompatActivity {
         loadSharedPreferences();
     }
 }
+

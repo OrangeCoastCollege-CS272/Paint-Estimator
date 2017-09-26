@@ -8,6 +8,10 @@ import android.widget.TextView;
 
 public class HelpActivity extends AppCompatActivity {
 
+    /**
+     * Called on layout creation grabs Extra from intent and fills TextView
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -16,6 +20,11 @@ public class HelpActivity extends AppCompatActivity {
         ((TextView)findViewById(R.id.amountTextView)).setText("Estimated Paint Required: " + intent.getFloatExtra("gallons" , 0) + " gallons");
     }
 
+    /**
+     * Returns the layout back to the previous layout
+     * Returns back to {@link MainActivity}
+     * @param view view which called method
+     */
     protected void goBack(View view) {
         startActivity(new Intent(this, MainActivity.class));
     }
